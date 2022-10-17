@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="src/assets/images/logo.png" />
+    <title>SIAKAD UNDIP</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="src/css/simplebar.css" />
+    <!-- Fonts CSS -->
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="src/css/feather.css" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="src/css/daterangepicker.css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="src/css/style.css" id="lightTheme" />
+    <link rel="stylesheet" href="src/css/app-light.css" id="lightTheme" />
+    <link rel="stylesheet" href="src/css/app-dark.css" id="darkTheme" disabled />
+  </head>
+  <body class="vertical light">
+    <div class="wrapper">
+      <nav class="topnav navbar navbar-light fixed-top bg-primary">
+        <button type="button" class="navbar-toggler text-white mt-2 p-0 mr-3 collapseSidebar">
+          <span class="iconify-inline navbar-toggler-icon" data-icon="dashicons:menu-alt" ></span>
+          <span class="title-page navbar-toggler-icon" style="width: 190px;">Data Pengguna</span>
+        </button>
+        <ul class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="avatar avatar-sm mt-2">
+                <img src="./src/assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle"/> </span>&nbsp;&nbsp;Administrator</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" >
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html" >
+              <img src="src/assets/images/sidebar.png" style="width: 150px; height: auto" />
+            </a>
+          </div>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100 active">
+              <a class="nav-link" href="dashboard.html">
+                <span class="iconify-inline" data-icon="ic:outline-dashboard" ></span>
+                <span class="ml-3 item-text">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#datapengguna" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link active" >
+                <span class="iconify-inline" data-icon="fa:group"></span>
+                <span class="ml-3 item-text">Data Pengguna</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="datapengguna">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./admin.html"><span class="ml-1 item-text">Admin</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./tenaga-pendidik.html"><span class="ml-1 item-text">Tenaga Kependidikan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./dosen.html"><span class="ml-1 item-text">Dosen</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./mahasiswa.html"><span class="ml-1 item-text">Mahasiswa</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#logbook" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="dashicons:book"></span>
+                <span class="ml-3 item-text">Log Book</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="logbook">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="logbook_anestesi.html"><span class="ml-1 item-text">Lihat Perincian Jumlah Kasus Anestesi</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="logbook_intensif.html"><span class="ml-1 item-text">Lihat Kegiatan Di Unit Rawat Intensif</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#kegiatanmahasiswa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="ph:student-fill" ></span>
+                <span class="ml-3 item-text">Kegiatan Mahasiswa</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="kegiatanmahasiswa" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_baca_jurnal.html"><span class="ml-1 item-text">Membaca Jurnal</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_baca_makalah.html"><span class="ml-1 item-text">Membaca Makalah</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kg_penelitian.html"><span class="ml-1 item-text">Kegiatan Penelitian</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kg_mengajar.html"><span class="ml-1 item-text">Kegiatan Mengajar</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_pg_masyarakat.html"><span class="ml-1 item-text">Pengabdian Masyarakat</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kasus.html"><span class="ml-1 item-text">Kasus Morbiltas/Moralitas</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#kegiatandosen" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline"  data-icon="fa-solid:chalkboard-teacher" ></span>
+                <span class="ml-3 item-text">Kegiatan Dosen</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="kegiatandosen" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kgd_pendidikan.html"><span class="ml-1 item-text">Pendidikan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kgd_pengabdian.html"><span class="ml-1 item-text">Pengabdian</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kgd_penelitian.html"><span class="ml-1 item-text">Penelitian</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="v_ujian.html">
+                <span class="iconify-inline"  data-icon="healthicons:i-exam-multiple-choice" ></span>
+                <span class="ml-3 item-text">Ujian</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#datanilaimahasiswa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="clarity:list-outline-badged" ></span>
+                <span class="ml-3 item-text">Data Nilai Mahasiswa</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="datanilaimahasiswa" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_nilaiujian.html"><span class="ml-1 item-text">Nilai Ujian Tertulis / Online</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_inp_nilaiketerampilan.html"><span class="ml-1 item-text">Input Ujian Nilai Keterampilan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_inp_nilailisan.html"><span class="ml-1 item-text">Input Nilai Ujian Lisan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_inp_nilaimatajar.html"><span class="ml-1 item-text">Input Nilai Mata Ajar</span></a>
+                </li>
+              </ul>
+            </li>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#materipembelajaran" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="bxs:book-reader" ></span>
+                <span class="ml-3 item-text">Materi Pembelajaran</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="materipembelajaran" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_mp_materipembelajaran.html"><span class="ml-1 item-text">Materi Pembelajaran</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_mp_video.html"><span class="ml-1 item-text">Video</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#pengaturan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="ep:setting" ></span>
+                <span class="ml-3 item-text">Pengaturan</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="pengaturan" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhpokokujian.html"><span class="ml-1 item-text">Tambah Pokok Ujian Online</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhpokokbahasa.html"><span class="ml-1 item-text">Tambah Pokok Bahasan Ujian Keterampilan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhpokokujianlisan.html"><span class="ml-1 item-text">Tambah Pokok Ujian Lisan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhmataajar.html"><span class="ml-1 item-text">Tambah Mata Ajar dan Modul</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbsemester.html"><span class="ml-1 item-text">Tambah Semester</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_pmbg_stspsrtdidik.html"><span class="ml-1 item-text">Pembagian Stase Peserta Didik</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_backup_db.html"><span class="ml-1 item-text">Backup Database</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_profile.html"><span class="ml-1 item-text">Profile</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main role="main" class="main-content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card shadow">
+                
+                <div class="card-body">
+                  <h5 class="card-tittle" style="margin-bottom: 20px;">Data Dosen</h5>
+                  <div class="button" style="margin-bottom: 20px; margin-left: 68%;">
+                    <button type="button" class="btn btn-warning btn-sm text-white">
+                      <span class="iconify" data-icon="fluent:print-16-regular" style="color: white;"  data-width="20" data-height="20"></span>
+                      Print PDF
+                    </button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".modal-devisi">
+                      <span class="iconify" data-icon="akar-icons:people-group" style="color: white;" data-width="20" data-height="20"></span></span>
+                      Daftar Devisi
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm text-white" data-toggle="modal" data-target=".modal-right">
+                      <span class="iconify" data-icon="carbon:add-alt" style="color: white;" data-width="20" data-height="20"></span>
+                      Tambah
+                    </button>
+                  </div>
+                  <div class="toolbar">
+                    <form class="form">
+                      <div class="form-row">
+                          <div class="form-group col" style="margin-left: 5px;">
+                            <label for="" class="col-form-label">Search</label>
+                            <input type="text" class="form-control" id="search1" value=""/>
+                          </div>
+                          <div class="form-group col" style="margin-left: 60px;">
+                            <label for="" class="col-form-label">Setatus</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelectPref1">
+                              <option value="" selected>Semua</option>
+                              <option value="1">Aktif</option>
+                              <option value="2">Tidak Aktif</option>
+                            </select>
+                          </div>
+                          <div class="form-group col ">
+                            <label for="" class="col-form-label">Devisi</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelectPref1">
+                              <option value="" selected>Semua</option>
+                              <option value="1">Devisi 1</option>
+                              <option value="2">Devisi 2</option>
+                              <option value="3">Devisi 3</option>
+                              <option value="4">Devisi 4</option>
+                            </select>
+                          </div>
+                          <div class="form-group col">
+                            <label for="" class="col-form-label">Jenis Kelamin</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelectPref1">
+                              <option value="" selected>Semua</option>
+                              <option value="1">Laki-laki</option>
+                              <option value="2">Perempuan</option>
+                            </select>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- table -->
+                  <table class="table table-borderless table-hover ">
+                    <thead>
+                      <tr>
+                        <th>Foto</th>
+                        <th >Nama</th>
+                        <th>NIP</th>
+                        <th class="w-25">Jenis Kelamin</th>
+                        <th>TTL</th>
+                        <th>Telepon</th>
+                        <th >Devisi</th>
+                        <th>Username</th>
+                        <th>Setatus</th>
+                        <th class="w-25">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="avatar avatar-md">
+                            <img src="src/assets/avatars/face-3.jpg" alt="..." class="avatar-img"/>
+                          </div>
+                        </td>
+                        <td>Lukman Wijayanto</td>
+                        <td>1234520</td>
+                        <td>Laki-laki</td>
+                        <td>Kendal, 10/07/2020</td>
+                        <td>+6210920910</td>
+                        <td>Devisi 1</td>
+                        <td>mamnoyeee</td>
+                        <td><p class="text-primary">Aktif</p></td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".modal-info">
+                              <span class="iconify" data-icon="bi:info-circle" style="color: white;"></span>
+                            </button>
+                            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".modal-edit">
+                              <span class="iconify" data-icon="akar-icons:edit" style="color: white;"></span>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                              <span class="iconify" data-icon="fluent:delete-16-regular" style="color: white;"></span>
+                            </button>
+                        </td>
+                        <!-- edit Modal -->
+                          <div class="modal fade modal-edit modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title text-primary" id="defaultModalLabel">Form Edit Dosen</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <form>
+                                    <div class="form-group">
+                                      <label for="nama-lengkap" class="col-form-label col-lg">Nama Lengkap</label>
+                                      <input type="text" class="form-control" id="nama-lengkap">
+                                    </div>
+                                    <div class="row">
+                                      <div class="form-group col">
+                                        <label for="username" class="col-form-label">Username</label>
+                                        <input type="text" class="form-control" id="username">
+                                      </div>
+                                      <div class="form-group col">
+                                        <label for="password" class="col-form-label">Password</label>
+                                        <input type="password" class="form-control" id="password">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="no_tlp" class="col-form-label">No Telepon</label>
+                                      <input type="text" class="form-control" id="no_tlp">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="email" class="col-form-label">Email</label>
+                                      <input type="text" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="jk" class="col-form-label">Jenis Kelamin</label>
+                                      <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                        <option value="" selected>Pilih Jenis Kelamin</option>
+                                        <option value="1">Laki-laki</option>
+                                        <option value="2">Perempuan</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="ttl" class="col-form-label">Tempat Lahir</label>
+                                      <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                        <option value="" selected>Pilih Kota</option>
+                                        <option value="1">Kendal</option>
+                                        <option value="2">Semanarng</option>
+                                        <option value="2">D.I. Yogyakarta</option>
+                                        <option value="2">Jakarta</option>
+                                        <option value="2">Solo</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="tgl_lahir" class="col-form-label">Tanggal Lahir</label>
+                                      <input type="date" class="form-control text-muted" id="tgl_lahir">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="tgl_lahir" class="col-form-label">Foto</label>
+                                      <input type="file" class="form-control-file text-muted" id="tgl_lahir">
+                                    </div>
+                                      <div class="card shadow">
+                                        <div class="card-body">
+                                          <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pendidikan</a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Riwayat Pekerjaan</a>
+                                            </li>
+                                            <li class="nav-item">
+                                              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Pelatihan</a>
+                                            </li>
+                                          </ul>
+                                          <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                              <button type="button" class="btn btn-light btn-sm text-success" data-toggle="modal" data-target=".modal-pendidikan">
+                                                <span class="iconify" data-icon="carbon:add" data-width="20" data-height="20"></span>
+                                                Tambah Pendidikan Baru
+                                              </button> 
+                                              <div class="input-group-append">
+                                                <input type="text" class="form-control mt-1">
+                                                  <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                                    <span class="iconify" data-icon="akar-icons:edit" data-width="20" data-height="20"></span>
+                                                  </a>
+                                                  <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                                    <span class="iconify" data-icon="ant-design:delete-outlined" data-width="20" data-height="20"></span>
+                                                  </a>
+                                              </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                              <button type="button" class="btn btn-light btn-sm text-success" data-toggle="modal" data-target=".modal-riwayat">
+                                                <span class="iconify" data-icon="carbon:add" data-width="20" data-height="20"></span>
+                                                Tambah Riwayat Pekerjaan
+                                              </button>
+                                              <div class="input-group-append">
+                                                <input type="text" class="form-control mt-1">
+                                                  <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                                    <span class="iconify" data-icon="akar-icons:edit" data-width="20" data-height="20"></span>
+                                                  </a>
+                                                  <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                                    <span class="iconify" data-icon="ant-design:delete-outlined" data-width="20" data-height="20"></span>
+                                                  </a>
+                                              </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                              <button type="button" class="btn btn-light btn-sm text-success" data-toggle="modal" data-target=".modal-pelatihan">
+                                                <span class="iconify" data-icon="carbon:add" data-width="20" data-height="20"></span>
+                                                Tambah Pendidikan Pelatihan
+                                              </button> 
+                                              <div class="input-group-append">
+                                                <input type="text" class="form-control mt-1">
+                                                  <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                                    <span class="iconify" data-icon="akar-icons:edit" data-width="20" data-height="20"></span>
+                                                  </a>
+                                                  <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                                    <span class="iconify" data-icon="ant-design:delete-outlined" data-width="20" data-height="20"></span>
+                                                  </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </form>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-sm mb-2 btn-light" data-dismiss="modal">Cancel</button>
+                                  <button type="button" class="btn btn-sm mb-2 btn-success text-white">Simpan</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end edit modal -->
+
+                                <!-- info Modal -->
+                                <div class="modal fade modal-info modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title text-primary" id="defaultModalLabel">Detail Data Dosen</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div class="row">
+                                          <div class="col">
+                                            <img src="src/assets/avatars/face-1.jpg" alt="" width="70px">
+                                          </div>
+                                          <div class="col-6" style="margin-right: 30%;">
+                                            <h5 class="text-primary">Lukman Wijayanto</h5>
+                                            <p class="">Dosen</p>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="nip" class="col-form-label">NIP</label>
+                                          <input type="text" class="form-control text-muted" id="nip"  placeholder="18670017" readonly>
+                                        </div>
+                                        <div class="row">
+                                          <div class="form-group col">
+                                            <label for="username" class="col-form-label">Username</label>
+                                            <input type="text" class="form-control text-muted" id="username" placeholder="mamanoyee" readonly>
+                                          </div>
+                                          <div class="form-group col">
+                                            <label for="password" class="col-form-label">Password</label>
+                                            <input type="password" class="form-control text-muted" id="password" readonly>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="devisi" class="col-form-label">Devisi</label>
+                                          <input type="text" class="form-control text-muted" id="devisi"   readonly>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="ttl" class="col-form-label">Tempat, Tanggal Lahir</label>
+                                          <input type="text" class="form-control text-muted" id="ttl"  readonly>
+                                        </div>
+                                        <div class="row">
+                                          <div class="form-group col">
+                                            <label for="jk" class="col-form-label">Jenis Kelamin</label>
+                                            <input type="text" class="form-control text-muted" id="jk" readonly>
+                                          </div>
+                                          <div class="form-group col">
+                                            <label for="agama" class="col-form-label">Agama</label>
+                                            <input type="text" class="form-control text-muted" id="agama" readonly>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="form-group col">
+                                            <label for="email" class="col-form-label">Email</label>
+                                            <input type="text" class="form-control text-muted" id="email" readonly>
+                                          </div>
+                                          <div class="form-group col">
+                                            <label for="no_tlp" class="col-form-label">No Telepn</label>
+                                            <input type="text" class="form-control text-muted" id="no_tlp" readonly>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="alamat" class="col-form-label">Alamat</label>
+                                          <input type="text" class="form-control text-muted" id="alamat"  readonly>
+                                        </div>
+                                      </div>
+                                      <!-- card -->
+                                      <div class="card">
+                                        <div class="card-body">
+                                          <h5 class="text-primary">Pendidikan</h5>
+                                            <div class="ml-2">
+                                              <p class="text-xl font-weight-bold">Universitas Diponegoro Semarang</p>
+                                              <p class="mt-2">Kedokteran</p>
+                                              <p class="text-muted">2020-2022</p>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="card">
+                                        <div class="card-body">
+                                          <h5 class="text-primary">Riwayat Pekerjaan</h5>
+                                            <div class="ml-2">
+                                              <p class="text-xl font-weight-bold">Universitas Diponegoro Semarang</p>
+                                              <p class="mt-2">Kedokteran</p>
+                                              <p class="text-muted">2020-2022</p>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <div class="card">
+                                        <div class="card-body">
+                                          <h5 class="text-primary">Pelatihan</h5>
+                                            <div class="ml-2">
+                                              <p class="text-xl font-weight-bold">Universitas Diponegoro Semarang</p>
+                                              <p class="mt-2">Kedokteran</p>
+                                              <p class="text-muted">2020-2022</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!-- end card -->
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-sm mb-2 btn-success text-white" style="padding: 5px 20px;">Print Portofolio
+                                        <span class="iconify" data-icon="fluent:print-16-regular" style="color: white;"  data-width="20" data-height="20"></span></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <!-- end info modal -->
+
+                              <!-- delete modal -->
+                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-body">
+                                      <div class="text-center">
+                                      <img src="src/assets/images/delete.png" alt="">
+                                      </div>
+                                      <p class="text-center" style="margin-top: 10%;">Anda yakin ingin menghapus data ini?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">Cancel</button>
+                                      <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <!-- delete end modal -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <nav aria-label="Table Paging" class="mb-0 text-muted">
+                    <ul class="pagination justify-content-center mb-0">
+                      <li class="page-item ">
+                        <a class="page-link" href="#">Previous</a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link rounded-circle" href="#">1</a>
+                      </li>
+                      <li class="page-item ">
+                        <a class="page-link rounded-circle" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link rounded-circle" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tambah Modal -->
+        <div class="modal fade modal-right modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-primary" id="defaultModalLabel">Form Tambah Dosen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="nama-lengkap" class="col-form-label col-lg">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="nama-lengkap">
+                  </div>
+                  <div class="row">
+                    <div class="form-group col">
+                      <label for="username" class="col-form-label">Username</label>
+                      <input type="text" class="form-control" id="username">
+                    </div>
+                    <div class="form-group col">
+                      <label for="password" class="col-form-label">Password</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="no_tlp" class="col-form-label">No Telepon</label>
+                    <input type="text" class="form-control" id="no_tlp">
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="col-form-label">Email</label>
+                    <input type="text" class="form-control" id="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="jk" class="col-form-label">Jenis Kelamin</label>
+                    <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                      <option value="" selected>Pilih Jenis Kelamin</option>
+                      <option value="1">Laki-laki</option>
+                      <option value="2">Perempuan</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="ttl" class="col-form-label">Tempat Lahir</label>
+                    <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                      <option value="" selected>Pilih Kota</option>
+                      <option value="1">Kendal</option>
+                      <option value="2">Semanarng</option>
+                      <option value="2">D.I. Yogyakarta</option>
+                      <option value="2">Jakarta</option>
+                      <option value="2">Solo</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="tgl_lahir" class="col-form-label">Tanggal Lahir</label>
+                    <input type="date" class="form-control text-muted" id="tgl_lahir">
+                  </div>
+                  <div class="form-group">
+                    <label for="tgl_lahir" class="col-form-label">Foto</label>
+                    <input type="file" class="form-control-file text-muted" id="tgl_lahir">
+                  </div>
+                    <div class="card shadow">
+                      <div class="card-body">
+                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home1" role="tab" aria-controls="home" aria-selected="true">Pendidikan</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile2" role="tab" aria-controls="profile" aria-selected="false">Riwayat Pekerjaan</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">Pelatihan</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab">
+                            <button type="button" class="btn btn-light btn-sm text-success" data-toggle="modal" data-target=".modal-pendidikan">
+                              <span class="iconify" data-icon="carbon:add" data-width="20" data-height="20"></span>
+                              Tambah Pendidikan Baru
+                            </button> 
+                            <div class="input-group-append">
+                              <input type="text" class="form-control mt-1">
+                                <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                  <span class="iconify" data-icon="akar-icons:edit" data-width="20" data-height="20"></span>
+                                </a>
+                                <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                  <span class="iconify" data-icon="ant-design:delete-outlined" data-width="20" data-height="20"></span>
+                                </a>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab">
+                            <button type="button" class="btn btn-light btn-sm text-success" data-toggle="modal" data-target=".modal-riwayat">
+                              <span class="iconify" data-icon="carbon:add" data-width="20" data-height="20"></span>
+                              Tambah Riwayat Pekerjaan
+                            </button>
+                            <div class="input-group-append">
+                              <input type="text" class="form-control mt-1">
+                                <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                  <span class="iconify" data-icon="akar-icons:edit" data-width="20" data-height="20"></span>
+                                </a>
+                                <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                  <span class="iconify" data-icon="ant-design:delete-outlined" data-width="20" data-height="20"></span>
+                                </a>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab">
+                            <button type="button" class="btn btn-light btn-sm text-success" data-toggle="modal" data-target=".modal-pelatihan">
+                              <span class="iconify" data-icon="carbon:add" data-width="20" data-height="20"></span>
+                              Tambah Pendidikan Pelatihan
+                            </button> 
+                            <div class="input-group-append">
+                              <input type="text" class="form-control mt-1">
+                                <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                  <span class="iconify" data-icon="akar-icons:edit" data-width="20" data-height="20"></span>
+                                </a>
+                                <a href="#" class="btn btn-outline-dark btn-sm ml-1 mt-1" type="button" id="button-addon2">
+                                  <span class="iconify" data-icon="ant-design:delete-outlined" data-width="20" data-height="20"></span>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm mb-2 btn-light" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-sm mb-2 btn-success text-white">Simpan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end tambah modal -->
+
+      <!-- devisi Modal -->
+      <div class="modal fade modal-devisi modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="defaultModalLabel">Tambah Devisi</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body "> 
+              <form>
+                <div class="row">
+                <div class="form-group col-8 mr-3">
+                  <label for="nama-lengkap" class="col-form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="nama-lengkap">
+                </div>
+                <div class="col-sm mt-4">
+                <button type="button" class="btn btn-sm mb-2 btn-success text-white">Tambah</button>
+              </div>
+              </div>
+              </form>
+
+              <div class="card">
+                <div class="card-body">
+                  <table class="table table-borderless table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="row">No</th>
+                        <th class="w-25">Nama Devisi</th>
+                        <th class="w-25">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Devisi 1</td>
+                        <td>
+                          <button type="button" class="btn btn-warning btn-sm">
+                            <span class="iconify" data-icon="akar-icons:edit" style="color: white;"></span>
+                          </button>
+                          <button type="button" class="btn btn-sm btn-danger btn-sm">
+                            <span class="iconify" data-icon="fluent:delete-16-regular" style="color: white;"></span>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Devisi 1</td>
+                        <td>
+                          <button type="button" class="btn btn-warning btn-sm">
+                            <span class="iconify" data-icon="akar-icons:edit" style="color: white;"></span>
+                          </button>
+                          <button type="button" class="btn btn-sm btn-danger btn-sm">
+                            <span class="iconify" data-icon="fluent:delete-16-regular" style="color: white;"></span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- end devisi modal -->
+
+  <!-- modal tambah pendidikan baru -->
+    <div class="modal fade modal-pendidikan modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary" id="defaultModalLabel">Tambah Pendidikan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="" class="col-form-label col-lg">Nama Sekolah</label>
+                <input type="text" class="form-control" id="">
+              </div>
+                <div class="form-group">
+                  <label for="" class="col-form-label">Gelar</label>
+                  <input type="text" class="form-control" id="">
+                </div>
+                <div class="form-group">
+                  <label for="" class="col-form-label">Bidang Studi</label>
+                  <input type="text" class="form-control" id="">
+                </div>
+                <div class="row">
+                  <div class="form-group col">
+                    <label for="" class="col-form-label">Tanggal Mulai</label>
+                    <input type="date" class="form-control" id="">
+                  </div>
+                  <div class="form-group col">
+                    <label for="" class="col-form-label">Tanggal Selesai</label>
+                    <input type="date" class="form-control" id="">
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="" class="col-form-label">Nilai</label>
+                <input type="text" class="form-control" id="">
+              </div>
+              <div class="form-group">
+                <label for="" class="col-form-label">Deskripsi</label>
+                <input type="text" class="form-control" id="">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm mb-2 btn-light" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-sm mb-2 btn-success text-white">Simpan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- modal tambah pendidikan baru -->
+
+<!-- modal tambah riwayat pekerjaan -->
+<div class="modal fade modal-riwayat modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="defaultModalLabel">Tambah Pengalaman Pekerjaan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="" class="col-form-label col-lg">Nama Perusahaan</label>
+            <input type="text" class="form-control" id="">
+          </div>
+            <div class="form-group">
+              <label for="" class="col-form-label">Lokasi</label>
+              <input type="text" class="form-control" id="">
+            </div>
+            <div class="form-group">
+              <label for="" class="col-form-label">Posisi</label>
+              <input type="text" class="form-control" id="">
+            </div>
+            <div class="row">
+              <div class="form-group col">
+                <label for="" class="col-form-label">Tanggal Mulai</label>
+                <input type="date" class="form-control" id="">
+              </div>
+              <div class="form-group col">
+                <label for="" class="col-form-label">Tanggal Selesai</label>
+                <input type="date" class="form-control" id="">
+              </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm mb-2 btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-sm mb-2 btn-success text-white">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- modal tambah riwayat pekerjaan -->
+
+<!-- modal tambah PELATIHAN -->
+<div class="modal fade modal-pelatihan modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="defaultModalLabel">Tambah Riwayat Pelatihan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="" class="col-form-label col-lg">Nama Pelatihan</label>
+            <input type="text" class="form-control" id="">
+          </div>
+            <div class="form-group">
+              <label for="" class="col-form-label">Deskripsi</label>
+              <input type="text" class="form-control" id="">
+            </div>
+            <div class="row">
+              <div class="form-group col">
+                <label for="" class="col-form-label">Tanggal Mulai</label>
+                <input type="date" class="form-control" id="">
+              </div>
+              <div class="form-group col">
+                <label for="" class="col-form-label">Tanggal Selesai</label>
+                <input type="date" class="form-control" id="">
+              </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm mb-2 btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-sm mb-2 btn-success text-white">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- modal tambah PELATIHAN -->
+      </main>
+    </div>
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
+    <script src="src/js/moment.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/simplebar.min.js"></script>
+    <script src="src/js/daterangepicker.js"></script>
+    <script src="src/js/jquery.stickOnScroll.js"></script>
+    <script src="src/js/tinycolor-min.js"></script>
+    <script src="src/js/config.js"></script>
+    <script src="src/js/apps.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-56159088-1");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="src/assets/images/logo.png">
+    <title>SIAKAD UNDIP</title>
+    <!-- Simple bar CSS -->
+    <link rel="stylesheet" href="src/css/simplebar.css">
+    <!-- Fonts CSS -->
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="src/css/feather.css">
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="src/css/daterangepicker.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="src/css/style.css" id="lightTheme">
+    <link rel="stylesheet" href="src/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="src/css/app-dark.css" id="darkTheme" disabled>
+</head>
+<body class="vertical light">
+    <div class="wrapper">
+      <nav class="topnav navbar navbar-light fixed-top bg-primary">
+        <button type="button" class="navbar-toggler text-white mt-2 p-0 mr-3 collapseSidebar">
+          <span class="iconify-inline navbar-toggler-icon" data-icon="dashicons:menu-alt"></span> <span class="title-page navbar-toggler-icon">Pengaturan</span>
+        </button>        
+        <ul class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="avatar avatar-sm mt-2">
+                <img src="./src/assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
+              </span>&nbsp;&nbsp;Administrator
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+          <i class="fe fe-x"><span class="sr-only"></span></i>
+        </a>
+        <nav class="vertnav navbar navbar-light">
+          <!-- nav bar -->
+          <div class="w-100 mb-4 d-flex">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html" >
+              <img src="src/assets/images/sidebar.png" style="width: 150px; height: auto" />
+            </a>
+          </div>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100 active">
+              <a class="nav-link" href="dashboard.html">
+                <span class="iconify-inline" data-icon="ic:outline-dashboard" ></span>
+                <span class="ml-3 item-text">Dashboard</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#datapengguna" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="fa:group"></span>
+                <span class="ml-3 item-text">Data Pengguna</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="datapengguna">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./admin.html"><span class="ml-1 item-text">Admin</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./tenaga-pendidik.html"><span class="ml-1 item-text">Tenaga Kependidikan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./dosen.html"><span class="ml-1 item-text">Dosen</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./mahasiswa.html"><span class="ml-1 item-text">Mahasiswa</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#logbook" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline" data-icon="dashicons:book"></span>
+                <span class="ml-3 item-text">Log Book</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="logbook">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="logbook_anestesi.html"><span class="ml-1 item-text">Lihat Perincian Jumlah Kasus Anestesi</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="logbook_intensif.html"><span class="ml-1 item-text">Lihat Kegiatan Di Unit Rawat Intensif</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#kegiatanmahasiswa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link " >
+                <span class="iconify-inline" data-icon="ph:student-fill" ></span>
+                <span class="ml-3 item-text">Kegiatan Mahasiswa</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="kegiatanmahasiswa" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_baca_jurnal.html"><span class="ml-1 item-text">Membaca Jurnal</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_baca_makalah.html"><span class="ml-1 item-text">Membaca Makalah</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kg_penelitian.html"><span class="ml-1 item-text">Kegiatan Penelitian</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kg_mengajar.html"><span class="ml-1 item-text">Kegiatan Mengajar</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_pg_masyarakat.html"><span class="ml-1 item-text">Pengabdian Masyarakat</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kasus.html"><span class="ml-1 item-text">Kasus Morbiltas/Moralitas</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#kegiatandosen" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link" >
+                <span class="iconify-inline"  data-icon="fa-solid:chalkboard-teacher" ></span>
+                <span class="ml-3 item-text">Kegiatan Dosen</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="kegiatandosen" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kgd_pendidikan.html"><span class="ml-1 item-text">Pendidikan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kgd_pengabdian.html"><span class="ml-1 item-text">Pengabdian</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_kgd_penelitian.html"><span class="ml-1 item-text">Penelitian</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item w-100">
+              <a class="nav-link" href="v_ujian.html">
+                <span class="iconify-inline"  data-icon="healthicons:i-exam-multiple-choice" ></span>
+                <span class="ml-3 item-text">Ujian</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#datanilaimahasiswa" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <span class="iconify-inline" data-icon="clarity:list-outline-badged" ></span>
+                <span class="ml-3 item-text">Data Nilai Mahasiswa</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="datanilaimahasiswa" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_nilaiujian.html"><span class="ml-1 item-text">Nilai Ujian Tertulis / Online</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_inp_nilaiketerampilan.html"><span class="ml-1 item-text">Input Ujian Nilai Keterampilan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_inp_nilailisan.html"><span class="ml-1 item-text">Input Nilai Ujian Lisan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_dnm_inp_nilaimatajar.html"><span class="ml-1 item-text">Input Nilai Mata Ajar</span></a>
+                </li>
+              </ul>
+            </li>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#materipembelajaran" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <span class="iconify-inline" data-icon="bxs:book-reader" ></span>
+                <span class="ml-3 item-text">Materi Pembelajaran</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="materipembelajaran" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_mp_materipembelajaran.html"><span class="ml-1 item-text">Materi Pembelajaran</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_mp_video.html"><span class="ml-1 item-text">Video</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav flex-fill w-100 mb-2">
+            <li class="nav-item dropdown">
+              <a href="#pengaturan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link active" >
+                <span class="iconify-inline" data-icon="ep:setting" ></span>
+                <span class="ml-3 item-text">Pengaturan</span>
+              </a>
+              <ul class="collapse list-unstyled pl-4 w-100" id="pengaturan" >
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhpokokujian.html"><span class="ml-1 item-text">Tambah Pokok Ujian Online</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhpokokbahasa.html"><span class="ml-1 item-text">Tambah Pokok Bahasan Ujian Keterampilan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhpokokujianlisan.html"><span class="ml-1 item-text">Tambah Pokok Ujian Lisan</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbhmataajar.html"><span class="ml-1 item-text">Tambah Mata Ajar dan Modul</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_tmbsemester.html"><span class="ml-1 item-text">Tambah Semester</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_pmbg_stspsrtdidik.html"><span class="ml-1 item-text">Pembagian Stase Peserta Didik</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_backup_db.html"><span class="ml-1 item-text">Backup Database</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="v_png_profile.html"><span class="ml-1 item-text">Profile</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main role="main" class="main-content">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="row align-items-center mb-2">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-tittle">Data Modul</h5>
+                          <div class="toolbar">
+                            <div class="toolbar">
+                              <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Masukan Nama Modul" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn btn-success text-white" type="button" id="button-addon2">Tambah</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <table class="table table-borderless table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">NO</th>
+                                <th scope="col">TAHAP</th>
+                                <th class="w-25">MATA AJARAN</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Modul Keterampilan Dasar Anestesi - I</td>
+                                <td>
+                                  <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit1">
+                                    <span class="iconify" data-icon="akar-icons:edit" style="color: white;"></span>
+                                  </button>
+                                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                    <span class="iconify" data-icon="fluent:delete-16-regular" style="color: white;"></span>
+                                  </button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Modul 2 Modul Keterampilan Dasar Anestesi - II</td>
+                                <td>
+                                  <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modaledit1">
+                                    <span class="iconify" data-icon="akar-icons:edit" style="color: white;"></span>
+                                  </button>
+                                  <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                    <span class="iconify" data-icon="fluent:delete-16-regular" style="color: white;"></span>
+                                  </button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div> 
+                      </div>
+                    </div>
+                    
+                    <div class="col-sm-8">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-tittle">Data Materi Ajar</h5>
+                          <div class="toolbar">
+                            <div class="toolbar">
+                              <div class="button" style=" margin-left: 85%; margin-top: 15px;">
+                                <button type="button" class="btn btn-success btn-sm text-white" data-toggle="modal" data-target=".modal-tambah">
+                                  <span class="iconify" data-icon="carbon:add-alt" style="color: white;" data-width="20" data-height="20"></span>
+                                  Tambah
+                                </button>
+                                </div>
+                                <div class="toolbar">
+                                  <form class="form">
+                                    <div class="form-row mt-3">
+                                        <div class="row">
+                                          <div class="form-group col" >
+                                            <label for="" class="col-form-label">Search</label>
+                                            <input type="text" class="form-control" id="search1" value="" placeholder="Search" />
+                                          </div>
+                                          <div class="form-group col" >
+                                            <label for="" class="col-form-label">Tahap Pendidikan</label>
+                                            <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                              <option value="" selected>Semua</option>
+                                              <option value="1">Tahap 1</option>
+                                              <option value="2">Tahap 2</option>
+                                            </select>
+                                          </div>
+                                          <div class="form-group col" >
+                                            <label for="" class="col-form-label">Jenis Kompetensi</label>
+                                            <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                              <option value="" selected>Semua</option>
+                                              <option value="1">Umum</option>
+                                              <option value="2">Tidak Umum</option>
+                                            </select>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                                </div>
+                                  <!-- table -->
+                                  <table class="table table-responsive table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">NO</th>
+                                        <th scope="col">TAHAP</th>
+                                        <th class="">MATA AJARAN</th>
+                                        <th class="">NOMOR MODUL</th>
+                                        <th class="">BEBAN STUDI AKADEMIK</th>
+                                        <th class="">BEBAN STUDI PROFESI</th>
+                                        <th class="">JENIS KOMPETENSI UTAMA</th>
+                                        <th class="w-25">AKSI</th>                    
+                                      </tr>
+                                    </thead>
+                                      <tbody>
+                                          <tr>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>Filsafat Ilmu</td>
+                                            <td>8</td>
+                                            <td>1</td>
+                                            <td>-</td>
+                                            <td>Umum</td>
+                                            <td>
+                                              <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".modal-edit2">
+                                                <span class="iconify" data-icon="akar-icons:edit" style="color: white;"></span>
+                                              </button>
+                                              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                <span class="iconify" data-icon="fluent:delete-16-regular" style="color: white;"></span>
+                                              </button>
+                                            </td>
+                                          </tr>
+
+                                          <!-- delete modal -->
+                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                      <div class="modal-body">
+                                                        <div class="text-center">
+                                                        <img src="src/assets/images/delete.png" alt="">
+                                                        </div>
+                                                        <p class="text-center" style="margin-top: 10%;">Anda yakin ingin menghapus data ini?</p>
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-sm btn-danger">Hapus</button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          <!-- delete end modal -->
+
+                                            <!-- edit 1 modal -->
+                                            <div class="modal fade" id="modaledit1" tabindex="-1" role="dialog" aria-labelledby="verticalModalTitle" aria-hidden="true">
+                                              <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="modaledit1Title">Edit Data Modul</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <div class="form-group">
+                                                      <label for="judulmateri" class="col-form-label">Nama Modul</label>
+                                                      <input type="text" class="form-control" id="judulmateri">
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm mb-2 btn-success text-white">Simpan</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <!-- end edit 1 modal -->
+
+                                        <!-- Tambah modal -->
+                                          <div class="modal fade modal-tambah modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h5 class="modal-title text-primary" id="defaultModalLabel">Form Tambah Mata Ajaran</h5>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body ">
+                                                  <form>
+                                                    <div class="form-group">
+                                                      <label for="" class="col-form-label">Tahap Pendidikan</label>
+                                                      <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                                        <option value="" selected>Pilih Mata Kuliah</option>
+                                                        <option value="1">Anestesi</option>
+                                                        <option value="2">Ortopedi</option>
+                                                      </select>
+                                                    </div>
+                                                    <div class="row">
+                                                      <div class="form-group col">
+                                                        <label for="" class="col-form-label">Semester</label>
+                                                        <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                                          <option value="" selected>Pilih Semester</option>
+                                                          <option value="1">Semester 1</option>
+                                                          <option value="2">Semester 2</option>
+                                                        </select>
+                                                      </div>
+                                                      <div class="form-group col">
+                                                        <label for="" class="col-form-label">Semester</label>
+                                                        <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                                          <option value="" selected>Masukan Nama Mata Ajaran</option>
+                                                          <option value="1">Anestesi</option>
+                                                          <option value="2">Ortopedi</option>
+                                                        </select>
+                                                      </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="" class="col-form-label">Jenis Kompetensi Utama</label>
+                                                      <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                                                        <option value="" selected>Pilih Salah Satu</option>
+                                                        <option value="1">Semester 1</option>
+                                                        <option value="2">Semester 2</option>
+                                                      </select>
+                                                    </div>
+                                                    <div class="row">
+                                                      <div class="form-group col">
+                                                        <label for="" class="col-form-label">Bobot Studi Akademik (SKS)</label>
+                                                        <input type="text" class="form-control text-muted" id="" placeholder="contoh : 4">
+                                                      </div>
+                                                      <div class="form-group col">
+                                                        <label for="" class="col-form-label">Bobot Studi Akademik (SKS)</label>
+                                                        <input type="text" class="form-control text-muted" id="" placeholder="contoh : 6">
+                                                      </div>
+                                                    </div>
+                                                    <div class="input-group mb-3">
+                                                      <label for="" class="col-form-label">Modul</label>
+                                                      <input type="text" class="form-control" placeholder="Pilih Modul" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                      <div class="input-group-append">
+                                                        <button class="btn btn-success text-white ml-2" type="button" id="button-addon2">
+                                                          <span class="iconify" data-icon="carbon:add" data-width="20px" data-height="20px"></span>
+                                                        </button>
+                                                      </div>
+                                                  </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-sm mb-2 btn-success text-white">Tambah</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        <!-- END Tambah MODAL -->
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                                  <nav aria-label="Table Paging" class="mb-0 text-muted">
+                                    <ul class="pagination justify-content-center mb-0">
+                                      <li class="page-item ">
+                                        <a class="page-link" href="#">Previous</a>
+                                      </li>
+                                      <li class="page-item active">
+                                        <a class="page-link rounded-circle" href="#">1</a>
+                                      </li>
+                                      <li class="page-item ">
+                                        <a class="page-link rounded-circle" href="#">2</a>
+                                      </li>
+                                      <li class="page-item">
+                                        <a class="page-link rounded-circle" href="#">3</a>
+                                      </li>
+                                      <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                      </li>
+                                    </ul>
+                                  </nav>
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- edit2 modal -->
+        <div class="modal fade modal-edit2 modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document" style="width: 40%;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-primary" id="defaultModalLabel">Form Edit Mata Ajaran</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body ">
+                <form>
+                  <div class="form-group">
+                    <label for="" class="col-form-label">Tahap Pendidikan</label>
+                    <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                      <option value="" selected>Pilih Mata Kuliah</option>
+                      <option value="1">Anestesi</option>
+                      <option value="2">Ortopedi</option>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col">
+                      <label for="" class="col-form-label">Semester</label>
+                      <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                        <option value="" selected>Pilih Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                      </select>
+                    </div>
+                    <div class="form-group col">
+                      <label for="" class="col-form-label">Semester</label>
+                      <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                        <option value="" selected>Masukan Nama Mata Ajaran</option>
+                        <option value="1">Anestesi</option>
+                        <option value="2">Ortopedi</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="" class="col-form-label">Jenis Kompetensi Utama</label>
+                    <select class="custom-select mr-sm-2 text-muted" id="inlineFormCustomSelectPref1">
+                      <option value="" selected>Pilih Salah Satu</option>
+                      <option value="1">Semester 1</option>
+                      <option value="2">Semester 2</option>
+                    </select>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col">
+                      <label for="" class="col-form-label">Bobot Studi Akademik (SKS)</label>
+                      <input type="text" class="form-control text-muted" id="" placeholder="contoh : 4">
+                    </div>
+                    <div class="form-group col">
+                      <label for="" class="col-form-label">Bobot Studi Akademik (SKS)</label>
+                      <input type="text" class="form-control text-muted" id="" placeholder="contoh : 6">
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label for="" class="col-form-label">Modul</label>
+                    <input type="text" class="form-control" placeholder="Pilih Modul" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-success text-white ml-2" type="button" id="button-addon2">
+                        <span class="iconify" data-icon="carbon:add" data-width="20px" data-height="20px"></span>
+                      </button>
+                    </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm mb-2 btn-success text-white">Tambah</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- END edit2 MODAL -->
+      </main>
+    </div>
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/popper.min.js"></script>
+    <script src="src/js/moment.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/simplebar.min.js"></script>
+    <script src='src/js/daterangepicker.js'></script>
+    <script src='src/js/jquery.stickOnScroll.js'></script>
+    <script src="src/js/tinycolor-min.js"></script>
+    <script src="src/js/config.js"></script>
+    <script src="src/js/apps.js"></script>
+    <script src='js/dropzone.min.js'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag()
+      {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-56159088-1');
+    </script>
+</body>
+</html>
